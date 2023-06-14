@@ -1,4 +1,6 @@
-Crypto Wallet!
+![cryptoWalletAppIcon90px](https://github.com/aum-chauhan-175/Crypto_Wallet/assets/83302656/cf21ced4-5a17-4068-8ddf-de3cdcd6b6bb)
+
+# Crypto Wallet!
 
 The Crypto Wallet App is a powerful and user-friendly iOS application, built using SwiftUI, designed to provide a seamless and secure experience for managing your cryptocurrency portfolio.
 
