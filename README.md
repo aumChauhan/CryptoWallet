@@ -1,4 +1,4 @@
-![cryptoWalletAppIcon90px](https://github.com/aum-chauhan-175/Crypto_Wallet/assets/83302656/cf21ced4-5a17-4068-8ddf-de3cdcd6b6bb)
+![appIcon70px](https://github.com/aum-chauhan-175/Crypto_Wallet/assets/83302656/bd02ccb6-59ce-4573-8e9f-5af7c7245a1d)
 
 # Crypto Wallet!
 
