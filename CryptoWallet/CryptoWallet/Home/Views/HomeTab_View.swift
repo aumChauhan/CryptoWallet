@@ -6,8 +6,9 @@ struct HomeTab_View: View {
     
     @State var tabSelection: TabModel = TabModel(iconName: "house.fill", title: "Home")
     @State private var scrollViewContentOffset = CGFloat(0)
-    @State private var scrollPosition: CGFloat = 0
+    @State var scrollPosition: CGFloat = 0
     @State var showKeyboardDismiss: Bool = false
+    @State var tabSelectionTag: String = "home"
     
     // MARK: User Defaults
     @AppStorage("showFilterOptionHomeTab") var showFilterOptionHomeTab: Bool = true
@@ -17,10 +18,12 @@ struct HomeTab_View: View {
         VStack(spacing: 0) {
             switch_tabSelection
             
-            CustomTabBar_View(tabSelection: $tabSelection)
+            //CustomTabBar_View(tabSelection: $tabSelection)
         }
         .ignoresSafeArea(.keyboard)
-        
+        .background(
+            scrollPosition < 25 ? Color.theme.background : Color.theme.secondaryBackground
+        )
         .navigationDestination(for: Coin_DataModel.self) { coin in
             DetailedCoin_View(coin: coin)
         }
@@ -31,22 +34,38 @@ extension HomeTab_View {
     // MARK: Tab Selector
     private var switch_tabSelection: some View {
         ZStack {
-            switch tabSelection {
-            case TabModel(iconName: "house.fill", title: "Home"):
+            TabView(selection: $tabSelection) {
                 homeTab_HeaderAndContent
+                    .tag(TabModel(iconName: "house.fill", title: "Home"))
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                    .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
-            case TabModel(iconName: "person.fill", title: "Portfolio"):
-                VStack { PortfolioTab_View() }
+                PortfolioTab_View(scrollPosition: $scrollPosition)
+                    .tag(TabModel(iconName: "person.fill", title: "Portfolio"))
+                    .tabItem {
+                        Label("Portfolio", systemImage: "person")
+                    }
+                    .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
-            case TabModel(iconName: "newspaper.fill", title: "News"):
-                NewsTab_View()
+                NewsTab_View(scrollPosition: $scrollPosition)
+                    .tag(TabModel(iconName: "newspaper.fill", title: "News"))
+                    .tabItem {
+                        Label("News", systemImage: "newspaper")
+                    }
+                    .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
-            case TabModel(iconName: "gear", title: "Setting"):
-                SettingTab_View()
+                SettingTab_View(scrollPosition: $scrollPosition)
+                    .tag(TabModel(iconName: "gear", title: "Setting"))
+                    .tabItem {
+                        Label("Setting", systemImage: "gear")
+                    }
+                    .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
-            default:
-                homeTab_HeaderAndContent
             }
+            .tint(Color.theme.icon)
+            
         }
         .edgesIgnoringSafeArea(.bottom)
     }
@@ -58,7 +77,7 @@ extension HomeTab_View {
             
             CustomNavBar_View(title: "Live Prices")
                 .background(
-                    scrollPosition < 25 ? Color.black.opacity(0.0) : Color.theme.secondaryBackground
+                    scrollPosition < 25 ? Color.theme.background : Color.theme.secondaryBackground
                 )
         }
         .background(Color.theme.background)
@@ -67,11 +86,11 @@ extension HomeTab_View {
     // MARK: TrackableScroll View
     private var allComponentsAndCryptoCurrencyRows: some View {
         VStack(alignment: .center, spacing: 0) {
-            CustomNavBar_View(title: "Live Prices").opacity(0.0) // For Blank Space
-            
             TrackableScrollView(.vertical, showIndicators: false, contentOffset: $scrollViewContentOffset, content: {
                 
-                // MARK: Seatch Bar View
+                CustomNavBar_View(title: "Live Prices").opacity(0.0) // White Space
+                
+                // MARK: Search Bar View
                 SearchBar_View(searchFilterString:  $homeTab_ViewModel.searchFilterString, showKeyboardDismiss: $showKeyboardDismiss)
                 
                 // MARK: From User Defaults
