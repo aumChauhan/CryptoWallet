@@ -185,7 +185,6 @@ extension SettingTab_View {
             
             // MARK: News Tab Section
             SingleRow_Setting_View(title: "News Tab", imageName: "newspaper.fill") {
-                Divider()
                 // MARK: 1
                 HStack {
                     Text("Author Name")
