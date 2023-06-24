@@ -3,8 +3,9 @@ import SwiftUI
 struct SettingTab_View: View {
     
     @State private var scrollViewContentOffset = CGFloat(0)
-    @State private var scrollPosition: CGFloat = 0
+    @Binding var scrollPosition: CGFloat
     @State var toogleSwitchHomeTab: Bool = true
+    @State var colorThemeRestartWarning: Bool = false
     
     let fontArray: [String] = ["default","rounded","monospaced","serif"]
     let colorThemeArray: [String] = ["button","buttonGreen","buttonPurple","buttonRed","buttonYellow"]
@@ -36,6 +37,14 @@ struct SettingTab_View: View {
             scrollTracker_NavBar
         }
         .background(Color.theme.background)
+        
+        .alert("Restart App", isPresented: $colorThemeRestartWarning) {
+            Button("Ok") {
+                exit(0)
+            }
+        } message: {
+            Text("You need to restart your app to apply theme")
+        }
     }
 }
 
@@ -58,6 +67,10 @@ extension SettingTab_View {
                         scrollPosition = scrollViewContentOffset
                     }
                 })
+                .onAppear {
+                    scrollPosition = 0
+                }
+                
             }
             
             // MARK: Navigation Title
@@ -82,6 +95,7 @@ extension SettingTab_View {
                                 withAnimation {
                                     colorTheme = color
                                     Color.theme.setTheme()
+                                    colorThemeRestartWarning.toggle()
                                 }
                             } label: {
                                 Circle()
@@ -236,11 +250,5 @@ extension SettingTab_View {
                 }
             }
         }
-    }
-}
-
-struct SettingTab_View_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingTab_View()
     }
 }
