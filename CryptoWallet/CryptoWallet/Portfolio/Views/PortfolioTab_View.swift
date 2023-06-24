@@ -10,7 +10,7 @@ struct PortfolioTab_View: View {
     @AppStorage("showMarketStatsPortfolioTab") var showMarketStatsPortfolioTab: Bool = true
     
     @State private var scrollViewContentOffset = CGFloat(0)
-    @State private var scrollPosition: CGFloat = 0
+    @Binding var scrollPosition: CGFloat
     @State var textFieldString: String = ""
     @State var showKeyboardDismiss: Bool = false
     @State var toogleSheet: Bool = false
@@ -78,6 +78,9 @@ extension PortfolioTab_View {
                     scrollPosition = scrollViewContentOffset
                 }
             })
+            .onAppear {
+                scrollPosition = 0
+            }
         }
     }
     
@@ -135,12 +138,5 @@ extension PortfolioTab_View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal, DefaultValues.shared.gloabalPaddingValue - 5)
         .padding(.vertical, 5)
-    }
-}
-
-struct PortfolioTab_View_Previews: PreviewProvider {
-    static var previews: some View {
-        PortfolioTab_View()
-            .environmentObject(HomeTab_ViewModel())
     }
 }
