@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SingleRow_Setting_View<Content:View>: View {
     
-    @State var showDetail: Bool = true
+    @State var showDetail: Bool = false
     
     let title: String
     let imageName: String
