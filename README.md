@@ -2,7 +2,7 @@
 
 # Crypto Wallet!
 
-The Crypto Wallet App is a powerful and user-friendly iOS application, built using SwiftUI, designed to provide a seamless and secure experience for managing your cryptocurrency portfolio.
+The Crypto Wallet App is a user-friendly iOS application, built using SwiftUI, designed to provide a seamless and secure experience for managing your cryptocurrency portfolio.
 
 Key Features:
 1. CoinGecko’s API Integration: The app leverages the CoinGecko API to fetch real-time data, including prices, market trends, and other vital information for a wide range of cryptocurrencies.
