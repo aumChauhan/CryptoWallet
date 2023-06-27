@@ -6,7 +6,7 @@ struct HomeTab_View: View {
     
     @State var tabSelection: TabModel = TabModel(iconName: "house.fill", title: "Home")
     @State private var scrollViewContentOffset = CGFloat(0)
-    @State var scrollPosition: CGFloat = 0
+    @State private var scrollPosition: CGFloat = 0
     @State var showKeyboardDismiss: Bool = false
     @State var tabSelectionTag: String = "home"
     
@@ -17,13 +17,8 @@ struct HomeTab_View: View {
     var body: some View {
         VStack(spacing: 0) {
             switch_tabSelection
-            
-            //CustomTabBar_View(tabSelection: $tabSelection)
         }
         .ignoresSafeArea(.keyboard)
-        .background(
-            scrollPosition < 25 ? Color.theme.background : Color.theme.secondaryBackground
-        )
         .navigationDestination(for: Coin_DataModel.self) { coin in
             DetailedCoin_View(coin: coin)
         }
@@ -42,21 +37,21 @@ extension HomeTab_View {
                     }
                     .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
-                PortfolioTab_View(scrollPosition: $scrollPosition)
+                PortfolioTab_View()
                     .tag(TabModel(iconName: "person.fill", title: "Portfolio"))
                     .tabItem {
                         Label("Portfolio", systemImage: "person")
                     }
                     .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
-                NewsTab_View(scrollPosition: $scrollPosition)
+                NewsTab_View()
                     .tag(TabModel(iconName: "newspaper.fill", title: "News"))
                     .tabItem {
                         Label("News", systemImage: "newspaper")
                     }
                     .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
-                SettingTab_View(scrollPosition: $scrollPosition)
+                SettingTab_View()
                     .tag(TabModel(iconName: "gear", title: "Setting"))
                     .tabItem {
                         Label("Setting", systemImage: "gear")
