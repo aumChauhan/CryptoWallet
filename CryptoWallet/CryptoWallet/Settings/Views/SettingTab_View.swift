@@ -3,7 +3,7 @@ import SwiftUI
 struct SettingTab_View: View {
     
     @State private var scrollViewContentOffset = CGFloat(0)
-    @Binding var scrollPosition: CGFloat
+    @State private var scrollPosition: CGFloat = 0
     @State var toogleSwitchHomeTab: Bool = true
     @State var colorThemeRestartWarning: Bool = false
     
@@ -67,10 +67,6 @@ extension SettingTab_View {
                         scrollPosition = scrollViewContentOffset
                     }
                 })
-                .onAppear {
-                    scrollPosition = 0
-                }
-                
             }
             
             // MARK: Navigation Title
