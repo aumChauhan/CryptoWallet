@@ -59,7 +59,7 @@ extension HomeTab_View {
                     .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
             }
-            .tint(Color.theme.icon)
+            .tint(Color.theme.button)
             
         }
         .edgesIgnoringSafeArea(.bottom)
