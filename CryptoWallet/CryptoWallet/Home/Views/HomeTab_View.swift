@@ -14,9 +14,14 @@ struct HomeTab_View: View {
     @AppStorage("showFilterOptionHomeTab") var showFilterOptionHomeTab: Bool = true
     @AppStorage("showMarketStatsHomeTab") var showMarketStatsHomeTab: Bool = true
     
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             switch_tabSelection
+            CustomTabBar_View(tabSelection: $tabSelection)
         }
         .ignoresSafeArea(.keyboard)
         .navigationDestination(for: Coin_DataModel.self) { coin in
@@ -60,7 +65,6 @@ extension HomeTab_View {
                 
             }
             .tint(Color.theme.button)
-            
         }
         .edgesIgnoringSafeArea(.bottom)
     }
