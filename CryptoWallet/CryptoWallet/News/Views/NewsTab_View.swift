@@ -39,6 +39,9 @@ extension NewsTab_View {
                         scrollPosition = scrollViewContentOffset
                     }
                 })
+                .refreshable {
+                    viewModel.getNews()
+                }
             }
             
             // MARK: Navigation Title, From User Defaults
