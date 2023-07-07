@@ -37,32 +37,15 @@ extension HomeTab_View {
             TabView(selection: $tabSelection) {
                 homeTab_HeaderAndContent
                     .tag(TabModel(iconName: "house.fill", title: "Home"))
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                    .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
                 PortfolioTab_View()
                     .tag(TabModel(iconName: "person.fill", title: "Portfolio"))
-                    .tabItem {
-                        Label("Portfolio", systemImage: "person")
-                    }
-                    .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
                 NewsTab_View()
                     .tag(TabModel(iconName: "newspaper.fill", title: "News"))
-                    .tabItem {
-                        Label("News", systemImage: "newspaper")
-                    }
-                    .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
                 
                 SettingTab_View()
                     .tag(TabModel(iconName: "gear", title: "Setting"))
-                    .tabItem {
-                        Label("Setting", systemImage: "gear")
-                    }
-                    .toolbarBackground(Color.theme.secondaryBackground, for: .tabBar)
-                
             }
             .tint(Color.theme.button)
         }
