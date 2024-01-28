@@ -1,6 +1,6 @@
 # Crypto Wallet
 
-Crypto Wallet App is an iOS application developed with SwiftUI, integrating CoinGecko's API for real-time cryptocurrency data. The app prioritizes security through Core Data for local storage, ensuring the safekeeping of user portfolio details. Manage your crypto holdings seamlessly, track real-time values, and explore detailed coin profiles. This repository provides a solid foundation for developers to contribute, customize, and adapt the app to their specific needs.
+Crypto Wallet App is an iOS application developed with SwiftUI, integrating CoinGecko's API for real-time cryptocurrency data. The app prioritizes security through Core Data for local storage, ensuring the safekeeping of user portfolio details. Manage your crypto holdings seamlessly, track real-time values, and explore detailed coin profiles. 
 
 <details>
 
