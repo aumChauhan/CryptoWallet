@@ -1,11 +1,40 @@
-![appIcon70px](https://github.com/aum-chauhan-175/Crypto_Wallet/assets/83302656/bd02ccb6-59ce-4573-8e9f-5af7c7245a1d)
+# Crypto Wallet
 
-# Crypto Wallet!
+Crypto Wallet App is an iOS application developed with SwiftUI, integrating CoinGecko's API for real-time cryptocurrency data. The app prioritizes security through Core Data for local storage, ensuring the safekeeping of user portfolio details. Manage your crypto holdings seamlessly, track real-time values, and explore detailed coin profiles. This repository provides a solid foundation for developers to contribute, customize, and adapt the app to their specific needs.
 
-The Crypto Wallet App is a user-friendly iOS application, built using SwiftUI, designed to provide a seamless and secure experience for managing your cryptocurrency portfolio.
+<details>
 
-Key Features:
-1. CoinGecko’s API Integration: The app leverages the CoinGecko API to fetch real-time data, including prices, market trends, and other vital information for a wide range of cryptocurrencies.
-2. Secure Local Storage: Utilizing the power of Core Data, the Crypto Wallet App ensures the secure storage of your personal data, such as portfolio holdings, and preferences, directly on your device.
-3. Portfolio Management: Easily manage your crypto holdings within the app. Track the value of your portfolio in real-time, and view detailed coin profiles.
-This open-source GitHub repository serves as a comprehensive codebase for the app, empowering developers to dive into the code, contribute, and customize it according to their specific requirements.
+<summary> <strong> App Preview </strong> </summary>
+  
+---
+## Onboarding
+![1](https://github.com/aumChauhan/Crypto_Wallet/assets/83302656/ff7dc142-0735-4a15-aae3-c9f9d008536b)
+
+---
+## Home Tab (Live Prices)
+![2](https://github.com/aumChauhan/Crypto_Wallet/assets/83302656/f247872f-6f51-4518-b572-2c0a11d8a1cd)
+
+---
+## Coin Info
+![3](https://github.com/aumChauhan/Crypto_Wallet/assets/83302656/ac725216-aab2-41e1-b3fa-30729b9c8e33)
+
+---
+## User's Portfolio
+![4](https://github.com/aumChauhan/Crypto_Wallet/assets/83302656/a94bf6d9-381e-4a08-90d3-cc4c6f8e8689)
+
+---
+## Add & Edit Coin's
+![5](https://github.com/aumChauhan/Crypto_Wallet/assets/83302656/2c91aa6f-6335-47e6-9dd1-a9f0455020ea)
+
+---
+## News Tab
+![6](https://github.com/aumChauhan/Crypto_Wallet/assets/83302656/7f41a35b-b5e9-4a9c-a915-0cfe723a798c)
+
+---
+## App Settings
+![7](https://github.com/aumChauhan/Crypto_Wallet/assets/83302656/a4595c1a-ab75-49d5-81c8-4e7aa8b731e9)
+
+</details>
+
+# License
+Crypto Wallet is licensed under the [GNU General Public License v3.0](LICENSE).
